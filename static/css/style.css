@@ -1,0 +1,102 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #212529;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+  font-size: .94em;
+  font-weight: normal;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  width: 85%;
+  max-width: 58rem;
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  letter-spacing: 0.01rem;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+li {
+  list-style: disc;
+}
+
+.section-title {
+  display: block;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #212121;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+.section-title:first-child {
+  margin-top: 0rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.footer .copyright {
+  color: #6c757d;
+  float: left;
+}
+
+.footer .navbar {
+  float: right;
+  margin-top: -1px;
+}
+
+code.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #515151;
+}
+
+.horizontal-li {
+  float: left;
+  list-style-type: none;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  color: #6c757d;
+}
+
+::selection {
+    background:#d3d3d3; 
+}
+
+::-moz-selection {
+    background:#d3d3d3; 
+}
+
+::-webkit-selection {
+    background:#d3d3d3; 
+}

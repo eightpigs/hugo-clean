@@ -1,0 +1,64 @@
+baseURL: "https://eightpigs.io/"
+languageCode: "en-us"
+title: "Eightpigs"
+theme: "clean"
+homepage: "https://eightpigs.io/"
+hasCJKLanguage: true
+permalinks:
+  posts: /:year/:month/:day/:filename
+
+menus:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 10
+    - identifier: archives
+      name: 归档
+      url: /archives
+      weight: 50
+    - identifier: about
+      name: 关于
+      url: /pages/about
+      weight: 100 
+
+params:
+  description: 热衷于折腾的Coder
+  keywords: IT,Java,Go,Web,Programmer,Algorithm,Runner
+  copyright:
+    enable: true
+    start: 2014
+    end: auto
+    name: auto
+  socials:
+    enable: true
+    twitter: eightpigs
+    email: eightpigs@outlook.com
+    github: eightpigs
+  render:
+    mathjax: true
+    mermaid: true
+    flowchart: true
+    highlight: gruvbox-light
+  category:
+    inIndex: true
+    alias:
+      vim: Vim
+      linux: Linux
+      life: 生活
+      reading: 阅读
+      tech: 科技
+      hardware: 硬件
+      algorithm: 算法
+      database: 数据库
+      devpractice: 开发实践
+      devlang: 开发语言
+      works: 输出/作品
+      think: 思考/观点
+  cc:
+    name: by-nc-nd 4.0
+    url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+markup:
+  highlight:
+    codeFences: false

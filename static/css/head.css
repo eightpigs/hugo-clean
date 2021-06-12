@@ -1,0 +1,40 @@
+.site-info .name {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: auto;
+}
+
+.navbar {
+  margin: 0 auto 3rem;
+}
+
+.navbar ul li {
+  display: inline-block;
+  border-right: 1px dotted #d6d6d6;
+  vertical-align: middle;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.navbar ul li:last-child {
+  border-right: 0px;
+}
+
+.navbar ul li a {
+  margin-right: 15px;
+}
+
+.site-info .socials {
+  margin-top: 0.5rem;
+}
+
+.site-info .socials a {
+  text-decoration: underline;
+}

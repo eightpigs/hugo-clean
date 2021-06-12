@@ -1,0 +1,26 @@
+<!-- page footer -->
+<div class="footer">
+  {{ if .Site.Params.copyright.enable }}
+  <div class="copyright">&copy; {{ .Site.Params.copyright.start }} - 
+    {{ if eq .Site.Params.copyright.end "auto" }}
+      {{ now.Format "2006" }} 
+    {{- else -}}
+      {{ .Site.Params.copyright.end }} 
+    {{ end }}
+
+    {{ if eq .Site.Params.copyright.name "auto" }}
+      {{ .Site.Title }} 
+    {{- else -}}
+      {{ .Site.Params.copyright.name }} 
+    {{ end }} 
+  </div>
+  {{ end }}
+  {{ partial "navbar.html" . }}
+</div>
+
+{{ if not .IsHome -}}
+  {{- partial "script-highlight.html" . -}}
+  {{- partial "script-mathjax.html" . -}}
+  {{- partial "script-mermaid.html" . -}}
+  {{- partial "script-flowchart.html" . -}}
+{{- end }}

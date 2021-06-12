@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <p class="section-title">文章</p>
+
+  {{ range first 5 (where (where .Site.Pages "Kind" "page") ".Params.separate" "!=" true) }}
+  <div class="posts">
+    <div class="item">
+      <div class="date"> {{.Date.Format "2006-01-02"}} </div>
+      <div class="title">
+        <a href="{{.Permalink}}">{{.Title}}</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ if and (.Site.Params.category.inIndex) (.Site.Taxonomies.categories) }} 
+  <p class="section-title">分类</p>
+  <ul>
+    {{ $alias := .Site.Params.category.alias }}
+    {{ range $key, $value := .Site.Taxonomies.categories }}
+      <li class="horizontal-li">
+        <a href="/categories/{{ $key | urlize  }}">
+          {{ index $alias ($key | lower) }}
+        </a> ({{ len $value }})</li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}

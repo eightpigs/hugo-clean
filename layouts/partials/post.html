@@ -1,0 +1,72 @@
+<div class="content markdown-body">
+  <h1>{{ .Title }} </h1>
+  <div class="info">
+    <span class="date">
+      {{ .Date.Format "2006-01-02" }}
+    </span>
+
+    {{ if .Params.categories }}
+      {{ $alias := .Site.Params.category.alias }}
+      <span class="categories">
+      {{ range .Params.categories }}
+      <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category">
+        {{ index $alias (. | lower) }}
+      </a>
+      {{end}}‣
+      </span>
+    {{ end }}
+    
+    <span class="tags">
+      {{ range .Params.tags }}
+      <a data-real="{{.}}" href="/tags/{{ urlize . }}/" class="tag">#{{.}}</a>
+      {{end}}
+    </span>
+  </div>
+  </h1>
+
+  {{ if .Params.changelogs }}
+  <div class="changelogs">
+    <div class="title">更新日志</div>
+    {{ range .Params.changelogs }}
+      {{ if eq (len .notes) 1 }}
+      <div class="changelog">
+        <span class="time">{{ .time }}</span>
+        <span class="note">{{ index .notes 0 }}</span>
+      </div>
+      {{ else }}
+      <div class="changelog">
+        <span class="time">{{ .time }}</span>
+        <ul>
+        {{ range .notes }}
+          <li>
+              <span class="note"> {{ . }} </span>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ if and (.Site.Params.cc) (.Params.cc) }}
+  <br />
+  <br />
+  <hr />
+  文章作者：{{ .Params.author }}
+  <br />
+  创作时间：{{ .Date.Format "2006-01-02" }}
+  <br />
+  更新时间：
+  {{ if .Params.Updated }}
+    {{ substr .Params.Updated 0 10 }}
+  {{ else }}
+    {{ .Date.Format "2006-01-02" }}
+  {{ end }}
+  <br />
+  许可协议：<a href="{{ .Site.Params.cc.url }}" target="_blank" class="cc">CC {{ .Site.Params.cc.name }}</a>
+  <hr />
+  {{ end }}
+</div>

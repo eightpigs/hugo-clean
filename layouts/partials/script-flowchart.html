@@ -1,0 +1,13 @@
+{{ if and (.Site.Params.render.flowchart) (.Params.flowchart) }}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
+<script>
+  var flows = document.getElementsByClassName("language-flow");
+  for(var i = 0; i < flows.length; i++) {
+    var code = flows[0].innerText.replace("```flow","").replace("```","");
+    flows[0].innerText = ""
+    var diagram = flowchart.parse(code);
+    diagram.drawSVG(flows[0]);
+  }
+</script>
+{{ end }}

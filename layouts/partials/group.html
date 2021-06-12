@@ -1,0 +1,13 @@
+<ul style="margin-left: 15px;">
+  <li>
+    {{ .Key }}
+    {{ range where .Pages "Type" "posts" }}
+    <ul class="item" style="margin-left: 30px;">
+      <li>
+        <span class="date" style="display: inline-block; height: 100%; min-width: 55px;">{{.Date.Format "01-02"}}</span>
+        <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
+      </li>
+    </ul>
+    {{ end }}
+  </li>
+</ul>

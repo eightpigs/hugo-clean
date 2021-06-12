@@ -1,0 +1,37 @@
+<div class="site-info">
+  <div class="name">
+  {{- .Site.Title -}}
+  {{ if not .IsHome }}
+    <span style="color: #CCC;">
+    / 
+    {{ $title := .Title }} 
+    {{ if eq .Type "categories" }}
+      {{ $alias := .Site.Params.category.alias }}
+      {{- index $alias ($title | lower) -}}
+    {{ else }}
+      {{- .Title -}}
+    {{ end }}
+    </span>
+  {{ end }}
+  </div>
+
+  {{ partial "navbar.html" . }}
+
+  {{ if .IsHome }}
+  <div class="description">{{ .Site.Params.description }}</div>
+    {{ if .Site.Params.socials.enable }}
+    <div class="socials">
+      Find me on 
+      {{ if gt (countrunes .Site.Params.socials.github) 0 }}
+        <a target="_blank" href="https://github.com/{{ .Site.Params.socials.github }}" >Github</a>
+      {{ end }}
+      {{ if gt (countrunes .Site.Params.socials.twitter) 0 }}
+        <a target="_blank" href="https://twitter.com/{{ .Site.Params.socials.twitter }}" >Twitter</a>
+      {{ end }}
+      {{ if gt (countrunes .Site.Params.socials.email) 0 }}
+        <a target="_blank" href="mailto:{{ .Site.Params.socials.email }}" >E-mail</a>
+      {{ end }}.
+    </div>
+    {{ end }}
+  {{ end }}
+</div>

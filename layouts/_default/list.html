@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="posts">
+  {{ if eq .Type "archives" }} 
+
+    {{ range .Site.RegularPages.GroupByDate "2006" }}
+      {{ partial "group.html" . }}
+    {{ end }}
+
+  {{- else -}}
+
+    {{ range .Pages.GroupByDate "2006" }}
+      {{ partial "group.html" . }}
+    {{ end }}
+
+  {{ end }}
+</div>
+{{ end }}
