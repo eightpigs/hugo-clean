@@ -19,9 +19,9 @@ body {
   flex-direction: column;
   background-color: #fff;
   line-height: 1.5;
-  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
-  font-size: .94em;
-  font-weight: normal;
+  font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  /* font-size: .96em; */
+  /* font-weight: normal; */
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   width: 85%;

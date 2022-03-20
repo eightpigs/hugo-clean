@@ -1,19 +1,21 @@
 <head>
   <meta charset="utf-8" />
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="{{ .Site.Title }}, {{ .Site.Params.socials.email }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
-  {{- $currentTimestamp := mul 1000 (time "2016-05-28T10:30:00.00+10:00").Unix -}}
+  {{- $currentTimestamp := now.Unix -}}
   {{- if .Site.Params.favicon -}}
   <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-png" />
   {{- end -}}
 
-  {{ if eq .File.Ext "md" -}}
-  <link rel="stylesheet" href="{{ "css/github-markdown.css" | relURL }}?t={{ $currentTimestamp }}">
-  {{- end -}}
+  {{ with .File }}
+    {{ if eq .File.Ext "md" -}}
+    <link rel="stylesheet" href="{{ "css/github-markdown.css" | relURL }}?t={{ $currentTimestamp }}">
+    {{- end -}}
+  {{ end }}
 
   <link rel="stylesheet" href="{{ "css/head.css" | relURL }}?t={{ $currentTimestamp }}">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?t={{ $currentTimestamp }}">

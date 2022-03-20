@@ -1,10 +1,14 @@
 .content .info {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .content .info * {
-  color: #6c757d;
+  color: #212529;
   margin-right: 8px;
+}
+
+.content .info .tag {
+  font-size: 14px;
 }
 
 .content .info .author {
@@ -35,13 +39,64 @@
    margin: 0px 0px 10px -10px;
    display: inline-block;
    padding: 2px 10px;
+   font-weight: bold;
 }
 
 .content .changelogs span.note {
-  color: #6c757d;
   display: inline-block;
   margin-left: 10px;
 }
 
 .content .changelogs span.time {
 }
+
+.content .outline {
+  position: fixed;
+  margin-left: 66em;
+  max-width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.content .outline ul {
+  padding-left: 0px !important;
+}
+
+.content .outline ul:first-child {
+  padding-top: 10px;
+  border-top: 1px solid #CCC;
+}
+
+.content .outline ul:not(:first-child) {
+  padding-left: 20px !important;
+}
+
+.content .outline li {
+  list-style: none;
+}
+
+.content .outline a {
+  color: #575757;
+}
+
+@media only screen and (max-width: 88em) {
+  .content .outline {
+    display: none !important;
+    position: unset;
+    right: unset;
+    margin-left: unset;
+  }
+
+  .content .outline ul:first-child {
+    padding-top: 10px;
+    border-top: 0px solid #CCC !important;
+  }
+}
+
+

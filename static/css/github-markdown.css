@@ -5,6 +5,7 @@
 
 .markdown-body {
   word-wrap: break-word;
+  text-rendering: optimizeLegibility;
 }
 
 .markdown-body .pl-c {
@@ -202,7 +203,7 @@
 }
 
 .markdown-body strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .markdown-body hr {
@@ -309,14 +310,12 @@
 
 .markdown-body code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
 }
 
 .markdown-body .octicon {
@@ -409,6 +408,7 @@
   padding: 0 1em;
   color: #6a737d;
   border-left: 0.25em solid #dfe2e5;
+  font-family: "KaiTi", "Biaodian Pro Serif GB","Numeral LF Serif",Georgia,"Times New Roman","Han Kaiti GB",cursive,serif;
 }
 
 .markdown-body blockquote>:first-child {
@@ -439,10 +439,10 @@
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  margin-top: 24px;
   margin-bottom: 16px;
-  font-weight: 600;
   line-height: 1.25;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .markdown-body h1 .octicon-link,
@@ -475,30 +475,18 @@
 }
 
 .markdown-body h1 {
-  padding-bottom: 0.3em;
   font-size: 2em;
 }
 
 .markdown-body h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.5em;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
 }
 
 .markdown-body h3 {
-  font-size: 1.25em;
-}
-
-.markdown-body h4 {
-  font-size: 1em;
-}
-
-.markdown-body h5 {
-  font-size: 0.875em;
+  margin-top: 1.2em;
 }
 
 .markdown-body h6 {
-  font-size: 0.85em;
   color: #6a737d;
 }
 
@@ -521,10 +509,6 @@
 
 .markdown-body li>p {
   margin-top: 16px;
-}
-
-.markdown-body li+li {
-  margin-top: 0.25em;
 }
 
 .markdown-body dl {
@@ -569,8 +553,18 @@
   max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
-  /* display: block; */
-  /* margin: 0 auto; */
+}
+
+.markdown-body img[src*="#block"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.markdown-body img[src*="#thumbnail"] {
+  width: 50%;
+  max-width: 50%;
+  box-sizing: content-box;
+  background-color: #fff;
 }
 
 .markdown-body img[align=right] {
@@ -584,8 +578,8 @@
 .markdown-body code {
   padding: 0.2em 0.4em;
   margin: 0;
-  font-size: 85%;
-  background-color: rgba(27,31,35,0.05);
+  font-size: 90%;
+  background-color: #e7eaec;
   border-radius: 3px;
 }
 
@@ -616,7 +610,7 @@
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
-  font-size: 85%;
+  font-size: 90%;
   line-height: 1.7;
   border-radius: 2px;
   border: 1px solid #888;

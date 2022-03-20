@@ -2,7 +2,7 @@
   <div class="name">
   {{- .Site.Title -}}
   {{ if not .IsHome }}
-    <span style="color: #CCC;">
+    <span class="sub">
     / 
     {{ $title := .Title }} 
     {{ if eq .Type "categories" }}

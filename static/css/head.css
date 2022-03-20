@@ -11,6 +11,10 @@
   -webkit-font-smoothing: auto;
 }
 
+.site-info .name .sub {
+  font-weight: 500;
+}
+
 .navbar {
   margin: 0 auto 3rem;
 }
