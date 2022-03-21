@@ -20,8 +20,6 @@ body {
   background-color: #fff;
   line-height: 1.5;
   font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
-  /* font-size: .96em; */
-  /* font-weight: normal; */
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   width: 85%;
@@ -95,4 +93,22 @@ code.has-jax {
 
 ::-webkit-selection {
     background:#d3d3d3; 
+}
+
+
+/*
+ * post list: index, archives
+ */
+.posts .item {
+  display: flex;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.posts .item .date {
+  float: left;
+  display: block;
+  min-width: 100px;
+  color: #6c757d;
+  font-family: sans-serif;
 }
