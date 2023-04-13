@@ -1,0 +1,116 @@
+.markdown-body * {
+  line-height: 1.7;
+}
+
+body{
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 24px;
+    padding: 0;
+}
+h1 {
+    font-size: 42px;
+}
+h2 {
+    font-size: 36px;
+    margin: 35px 0 6px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+
+a {
+    color: rgb(9, 105, 218);
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+ul, ol {
+  padding: 4px 0px;
+  margin: 0;
+  margin-left: 2em;
+}
+
+li ul, li ul {
+    margin-left: 24px;
+}
+
+code {
+    font-family: IBM Plex Mono, Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    background: rgba(169, 189, 215, 0.4);
+    border-radius: 4px;
+    padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+pre {
+  font-size: 16px;
+  margin: 16px 0px;
+  padding: 16px;
+  white-space: pre-wrap;
+  border: 1px solid;
+    border-radius: 8px;
+}
+
+pre code {
+  background: transparent;
+}
+
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    margin: 1em 1em;
+    border-left: 4px solid #d73a49;
+  border-radius:6px;
+  padding-left: 20px;
+}
+blockquote p {
+    /* color: #666; */
+}
+hr {
+    text-align: left;
+    margin: 8px 0px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1em 0.2em;
+    border: 1px solid #CCC;
+}
+
+table thead {
+  font-weight: bold;
+}
+
+table th, table td {
+    padding: 0.5em 1em;
+    border: 1px solid #CCC;
+}
+
+img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+  margin: 10px 0px;
+}
+
+.hljs {
+  background-color: transparent !important;
+}

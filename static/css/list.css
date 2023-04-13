@@ -1,0 +1,12 @@
+.posts .item {
+  display: flex;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.posts .item .date {
+  float: left;
+  display: block;
+  min-width: 120px;
+  color: #6c757d;
+}

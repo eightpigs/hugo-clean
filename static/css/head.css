@@ -1,22 +1,21 @@
 .site-info .name {
   margin-top: -10px;
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 40px;
   letter-spacing: 0.01em;
-  font-weight: 700;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 44px;
   line-height: 2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: auto;
 }
 
-.site-info .name .sub {
-  font-weight: 500;
+.navbar {
+  margin: 0 auto 2rem;
 }
 
-.navbar {
-  margin: 0 auto 3rem;
+.navbar ul {
+  padding: unset !important;
+  margin: unset !important;
 }
 
 .navbar ul li {
@@ -33,6 +32,7 @@
 
 .navbar ul li a {
   margin-right: 15px;
+  color: unset !important;
 }
 
 .site-info .socials {

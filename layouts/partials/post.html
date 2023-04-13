@@ -1,4 +1,3 @@
-
 <div class="content markdown-body">
   <h1>{{ .Title }} </h1>
   <div class="info">
@@ -8,12 +7,12 @@
 
     {{ if .Params.categories }}
       {{ $alias := .Site.Params.category.alias }}
-      <span class="categories">
+      <span class="categories" style="font-weight:bold;">
       {{ range .Params.categories }}
       <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category">
         {{ index $alias (. | lower) }}
       </a>
-      {{end}}⯈
+      {{end}}
       </span>
     {{ end }}
 
@@ -47,13 +46,6 @@
       </div>
       {{ end }}
     {{ end }}
-  </div>
-  {{ end }}
-
-  {{ if and (gt .WordCount 400 )}}
-  <div class="outline">
-    <h4>大纲</h4>
-    {{.TableOfContents}}
   </div>
   {{ end }}
 

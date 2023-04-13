@@ -39,7 +39,9 @@ params:
     mathjax: true
     mermaid: true
     flowchart: true
-    highlight: gruvbox-light
+    highlight: 
+      light: gruvbox-light
+      dark: gruvbox-light
   category:
     inIndex: true
     alias:

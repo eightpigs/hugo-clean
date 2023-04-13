@@ -17,13 +17,14 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  line-height: 1.5;
-  font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.7;
+  font-family: "IBM Plex Mono",-apple-system,"Helvetica Neue",Arial,"LXGW WenKai","PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+  font-size: 1.1em;
+  font-weight: normal;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   width: 85%;
-  max-width: 58rem;
+  max-width: 62rem;
   margin: 0 auto;
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -39,11 +40,9 @@ a {
 
 .section-title {
   display: block;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #212121;
   letter-spacing: 0.01em;
-  font-weight: 400;
   font-style: normal;
   font-size: 1.5em;
 }
@@ -53,12 +52,11 @@ a {
 }
 
 .footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .footer .copyright {
-  color: #6c757d;
   float: left;
 }
 
@@ -84,31 +82,27 @@ code.has-jax {
 }
 
 ::selection {
-    background:#d3d3d3; 
+    background: rgba(178, 224, 251, 0.5); 
 }
 
 ::-moz-selection {
-    background:#d3d3d3; 
+    background: rgba(178, 224, 251, 0.5); 
 }
 
 ::-webkit-selection {
-    background:#d3d3d3; 
+    background: rgba(178, 224, 251, 0.5); 
 }
 
-
-/*
- * post list: index, archives
- */
-.posts .item {
-  display: flex;
-  margin-top: 4px;
-  margin-bottom: 4px;
+@media screen and (prefers-color-scheme: light) {
+  *, body {
+    color: #212529;
+    background-color: #ffffff;
+  }
 }
 
-.posts .item .date {
-  float: left;
-  display: block;
-  min-width: 100px;
-  color: #6c757d;
-  font-family: sans-serif;
+@media screen and (prefers-color-scheme: dark) {
+  *, body {
+    color: #f0f0f0;
+    background-color: #212529;
+  }
 }

@@ -4,7 +4,11 @@
     {{ range where .Pages "Type" "posts" }}
     <ul class="item" style="margin-left: 30px;">
       <li>
-        <span class="date" style="display: inline-block; height: 100%; min-width: 55px;">{{.Date.Format "01-02"}}</span>
+        {{ if .IsHome }}
+        <span class="date">{{.Date.Format "01-02"}}</span>
+        {{ else }}
+        <span class="date">{{.Date.Format "01-02"}}</span>
+        {{ end }}
         <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
       </li>
     </ul>

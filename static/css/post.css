@@ -1,14 +1,9 @@
 .content .info {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .content .info * {
-  color: #212529;
   margin-right: 8px;
-}
-
-.content .info .tag {
-  font-size: 14px;
 }
 
 .content .info .author {
@@ -29,10 +24,6 @@
   margin-bottom: 50px;
 }
 
-.content .changelogs * {
-  color: #333;
-}
-
 .content .changelogs .title {
    border-right: 1px solid #CCC;
    border-bottom: 1px solid #CCC;
@@ -47,56 +38,6 @@
   margin-left: 10px;
 }
 
-.content .changelogs span.time {
+.posts .item .date {
+  min-width: 70px !important;
 }
-
-.content .outline {
-  position: fixed;
-  margin-left: 66em;
-  max-width: 200px;
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.content .outline ul {
-  padding-left: 0px !important;
-}
-
-.content .outline ul:first-child {
-  padding-top: 10px;
-  border-top: 1px solid #CCC;
-}
-
-.content .outline ul:not(:first-child) {
-  padding-left: 20px !important;
-}
-
-.content .outline li {
-  list-style: none;
-}
-
-.content .outline a {
-  color: #575757;
-}
-
-@media only screen and (max-width: 88em) {
-  .content .outline {
-    display: none !important;
-    position: unset;
-    right: unset;
-    margin-left: unset;
-  }
-
-  .content .outline ul:first-child {
-    padding-top: 10px;
-    border-top: 0px solid #CCC !important;
-  }
-}
-
-
