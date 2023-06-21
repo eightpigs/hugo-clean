@@ -1,9 +1,8 @@
 .site-info .name {
   margin-top: -10px;
   margin-bottom: 40px;
-  letter-spacing: 0.01em;
   font-style: normal;
-  font-size: 44px;
+  font-size: 2em;
   line-height: 2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: auto;

@@ -17,9 +17,9 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  line-height: 1.7;
+  line-height: 1.6;
   font-family: "IBM Plex Mono",-apple-system,"Helvetica Neue",Arial,"LXGW WenKai","PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
-  font-size: 1.1em;
+  font-size: 1.08em;
   font-weight: normal;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
@@ -28,7 +28,6 @@ body {
   margin: 0 auto;
   margin-top: 4rem;
   margin-bottom: 4rem;
-  letter-spacing: 0.01rem;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -42,7 +41,6 @@ a {
   display: block;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  letter-spacing: 0.01em;
   font-style: normal;
   font-size: 1.5em;
 }
@@ -94,15 +92,19 @@ code.has-jax {
 }
 
 @media screen and (prefers-color-scheme: light) {
-  *, body {
+  * {
     color: #212529;
+  }
+  body {
     background-color: #ffffff;
   }
 }
 
 @media screen and (prefers-color-scheme: dark) {
-  *, body {
+  * {
     color: #f0f0f0;
+  }
+  body {
     background-color: #212529;
   }
 }
