@@ -10,3 +10,14 @@
   min-width: 120px;
   color: #6c757d;
 }
+
+@media screen and (min-width: 1200px){} /* Desktop */
+@media screen and (min-width: 1025px) and (max-width: 1199px){} /* small laptop */
+@media screen and (min-width: 768px) and (max-width: 1024px){} /* tablet */
+@media screen and (min-width: 575px) and (max-width: 767.98px){} /* tablet and large mobiles */
+@media screen and (min-width: 320px) and (max-width: 480px){
+  .posts .item .date {
+    width: 0px;
+    display: none;
+  }
+} /* Mobile*/

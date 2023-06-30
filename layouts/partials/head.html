@@ -8,6 +8,8 @@
     {{ if eq .Type "categories" }}
       {{ $alias := .Site.Params.category.alias }}
       {{- index $alias ($title | lower) -}}
+    {{ else if eq .Type "tags" }}
+      #{{- .Title -}}
     {{ else }}
       {{- .Title -}}
     {{ end }}

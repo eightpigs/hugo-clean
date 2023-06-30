@@ -19,7 +19,7 @@
 
 .navbar ul li {
   display: inline-block;
-  border-right: 1px dotted #d6d6d6;
+  border-right: 1px solid #eaecef;
   vertical-align: middle;
   text-align: center;
   margin-right: 15px;

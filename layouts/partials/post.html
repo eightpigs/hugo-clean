@@ -9,10 +9,8 @@
       {{ $alias := .Site.Params.category.alias }}
       <span class="categories" style="font-weight:bold;">
       {{ range .Params.categories }}
-      <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category">
-        {{ index $alias (. | lower) }}
-      </a>
-      {{end}}
+      <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category">[{{ index $alias (. | lower) }}]</a>
+      {{ end }}
       </span>
     {{ end }}
 
@@ -52,9 +50,7 @@
   {{ .Content }}
 
   {{ if and (.Site.Params.cc) (.Params.cc) }}
-  <br />
-  <br />
-  <hr />
+  <div class="cc">
   文章作者：{{ .Params.author }}
   <br />
   创作时间：{{ .Date.Format "2006-01-02" }}
@@ -66,7 +62,9 @@
     {{- .Date.Format "2006-01-02" }}
   {{ end }}
   <br />
-  许可协议：<a href="{{ .Site.Params.cc.url }}" target="_blank" class="cc">CC {{ .Site.Params.cc.name }}</a>
-  <hr />
+  许可协议：<a href="{{ .Site.Params.cc.url }}" target="_blank" style="text-transform: uppercase;">CC {{ .Site.Params.cc.name }}</a>
+  </div>
   {{ end }}
 </div>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,6 @@
+{{ if not .IsHome -}}
+  {{- partial "script-highlight.html" . -}}
+  {{- partial "script-mathjax.html" . -}}
+  {{- partial "script-mermaid.html" . -}}
+  {{- partial "script-flowchart.html" . -}}
+{{- end }}
