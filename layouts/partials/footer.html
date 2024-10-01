@@ -1,12 +1,10 @@
 <!-- page footer -->
 <div class="footer">
   {{ if .Site.Params.copyright.enable }}
-  <div class="copyright">&copy; {{ .Site.Params.copyright.start }} - 
-    {{ if eq .Site.Params.copyright.end "auto" }}
-      {{ now.Format "2006" }} 
-    {{- else -}}
-      {{ .Site.Params.copyright.end }} 
-    {{ end }}
+  <div class="copyright">
+    {{ $start := .Site.Params.copyright.start }} 
+    {{ $end := cond (eq .Site.Params.copyright.end "auto") (now.Format "2006") .Site.Params.copyright.end }} 
+    &copy; {{ $start }} - {{ $end }}
 
     {{ if eq .Site.Params.copyright.name "auto" }}
       {{ .Site.Title }} 

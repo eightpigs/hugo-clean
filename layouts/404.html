@@ -1,9 +1,5 @@
 {{ define "main" }}
-  <div>
-    <br/>
-    <br/>
-    <h1>Page Not Found.</h1>
-    <br/>
-    <br/>
-  </div>
+<div style="margin-top: 4em;">
+  {{ .Site.Params.prompts.notFound }}
+</div>
 {{ end }}

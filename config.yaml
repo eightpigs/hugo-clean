@@ -14,7 +14,7 @@ menus:
       url: /
       weight: 10
     - identifier: archives
-      name: 归档
+      name: 文章
       url: /archives
       weight: 50
     - identifier: about
@@ -39,9 +39,6 @@ params:
     mathjax: true
     mermaid: true
     flowchart: true
-    highlight: 
-      light: gruvbox-light
-      dark: gruvbox-light
   category:
     inIndex: true
     alias:
@@ -60,7 +57,3 @@ params:
   cc:
     name: by-nc-nd 4.0
     url: https://creativecommons.org/licenses/by-nc-nd/4.0/
-
-markup:
-  highlight:
-    codeFences: false

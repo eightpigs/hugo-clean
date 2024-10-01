@@ -2,7 +2,7 @@
   <div class="name">
   {{- .Site.Title -}}
   {{ if not .IsHome }}
-    <span>
+    <span style="font-weight: normal; color: #808080;">
     / 
     {{ $title := .Title }} 
     {{ if eq .Type "categories" }}
@@ -10,8 +10,15 @@
       {{- index $alias ($title | lower) -}}
     {{ else if eq .Type "tags" }}
       #{{- .Title -}}
+    {{ else if strings.Contains $title "404" }}
+      404
     {{ else }}
-      {{- .Title -}}
+      {{ $menus := where .Site.Menus.main "Identifier" (.Title | lower) }}
+      {{ if gt (len $menus) 0 }}
+        {{ (index $menus 0).Name }}
+      {{ else }}
+      {{- .Title | lower -}}
+      {{ end }}
     {{ end }}
     </span>
   {{ end }}
@@ -20,7 +27,9 @@
   {{ partial "navbar.html" . }}
 
   {{ if .IsHome }}
+  {{ if .Site.Params.description }}
   <div class="description">{{ .Site.Params.description }}</div>
+  {{ end }}
     {{ if .Site.Params.socials.enable }}
     <div class="socials">
       Find me on 

@@ -12,12 +12,6 @@
   <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-png" />
   {{- end -}}
 
-  {{ with .File }}
-    {{ if eq .File.Ext "md" -}}
-    <link rel="stylesheet" href="{{ "css/markdown-simple.css" | relURL }}?t={{ $currentTimestamp }}">
-    {{- end -}}
-  {{ end }}
-
   <link rel="stylesheet" href="{{ "css/head.css" | relURL }}?t={{ $currentTimestamp }}">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?t={{ $currentTimestamp }}">
   <link rel="stylesheet" href="{{ "css/list.css" | relURL }}?t={{ $currentTimestamp }}">
@@ -35,10 +29,10 @@
   <meta property="og:description" content="{{ default .Summary .Description }}" />
   <meta name="description" content="{{ default .Summary .Description }}" />
   <meta name="keywords" content="{{ .Site.Params.keywords }}" />
-  {{ if .Params.highlight }}
-  <link rel="stylesheet" href="/css/highlight/{{ .Site.Params.render.highlight.light | default "gruvbox-light" }}.css">
-  <link rel="stylesheet" href="/css/highlight/{{ .Site.Params.render.highlight.dark | default "dark" }}.css" media="(prefers-color-scheme: dark)">
-  {{ end }}
+
+  {{ if eq .Page.Type "posts" }}
   <link rel="stylesheet" href="{{ "css/post.css" | relURL }}?t={{ $currentTimestamp }}">
+  {{ end }}
+
   {{- end }}
 </head>

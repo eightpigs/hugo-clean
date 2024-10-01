@@ -13,7 +13,6 @@ A minimalistic Hugo theme crafted with simplicity, content-focus, and an excepti
   - [MathJax](https://github.com/mathjax/MathJax) for mathematical notation
   - [Mermaid](https://github.com/mermaid-js/mermaid) for diagrams and flowcharts
   - [Flowchart](https://github.com/adrai/flowchart.js) for generating flowcharts from text
-  - [Highlight](https://github.com/highlightjs/highlight.js) for syntax highlighting in code blocks
 
 ## Installation
 

@@ -17,8 +17,8 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  line-height: 1.6;
-  font-family: "IBM Plex Mono",-apple-system,"Helvetica Neue",Arial,"LXGW WenKai","PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+  line-height: 1.8;
+  font-family: "Times New Roman", Georgia, PMingLiu, SimSun, "WenQuanYi Bitmap Song", "Noto Serif CJK", serif;
   font-size: 1.08em;
   font-weight: normal;
   -moz-osx-font-smoothing: auto;
@@ -27,9 +27,15 @@ body {
   max-width: 62rem;
   margin: 0 auto;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  text-align: justify;
+  font-feature-settings: "halt";
+}
+
+body:lang(en-US) {
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", SegoeUI, Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -43,24 +49,27 @@ a {
   margin-bottom: 1rem;
   font-style: normal;
   font-size: 1.5em;
+  font-weight: 700;
 }
 
 .section-title:first-child {
   margin-top: 0rem;
 }
 
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .footer {
-  margin-top: 1rem;
-  margin-bottom: 0rem;
-}
-
-.footer .copyright {
-  float: left;
-}
-
-.footer .navbar {
-  float: right;
-  margin-top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-top: 2rem;
 }
 
 code.has-jax {
@@ -69,14 +78,6 @@ code.has-jax {
   background: inherit;
   border: inherit;
   color: #515151;
-}
-
-.horizontal-li {
-  float: left;
-  list-style-type: none;
-  margin-right: 20px;
-  margin-bottom: 10px;
-  color: #6c757d;
 }
 
 ::selection {
@@ -106,5 +107,172 @@ code.has-jax {
   }
   body {
     background-color: #212529;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  padding-bottom: .3em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1:first-child {
+  border-bottom: 0px;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0px;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+ul, ol {
+  padding: 0px;
+  margin: 0;
+  margin-left: 18px;
+}
+
+ul li:has(input[type="checkbox"]) { 
+  list-style: none;
+  margin-left: 0px;
+}
+
+li input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  margin-left: -16px;
+}
+
+li ul {
+  margin-left: 32px;
+}
+
+ul li {
+  list-style: disc;
+}
+
+code {
+  font-family: IBM Plex Mono, Consolas, Monaco, Andale Mono, monospace, "LXGW WenKai";
+  line-height: 1.5;
+  background: rgba(169, 189, 215, 0.4);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9em;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+pre {
+  font-size: 16px;
+  margin: 16px 0px;
+  padding: 16px;
+  white-space: pre-wrap;
+  border-radius: 8px;
+}
+
+pre code {
+  background: transparent;
+  padding: 0px;
+  margin: 0px;
+}
+
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+
+blockquote {
+  margin: 2em 1em !important;
+  border-left: 4px solid #d73a49;
+  padding-left: 1em;
+}
+
+blockquote p {
+  font-weight: bold;
+}
+
+blockquote::before {
+  margin-right: 0.25em;
+  color: #d73a49;
+  content: "\201C";
+  vertical-align: -0.4em;
+  font-size: 2em;
+  line-height: 0.8em;
+}
+
+hr {
+  text-align: left;
+  margin: 8px 0px;
+  color: #eaecef;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1em 0.2em;
+    border: 1px solid #CCC;
+}
+
+table thead {
+  font-weight: bold;
+}
+
+table th, 
+table td {
+    padding: 0.5em 1em;
+    border: 1px solid #CCC;
+}
+
+blockquote,
+details,
+dl,
+p,
+pre,
+table {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+  margin: 10px 0px;
+}
+
+.hljs {
+  background-color: transparent !important;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .highlight pre, pre {
+    background-color: #f6f8fa !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .highlight pre, pre {
+    background-color: #161b22 !important;
   }
 }

@@ -41,7 +41,3 @@
   display: inline-block;
   margin-left: 10px;
 }
-
-.posts .item .date {
-  min-width: 70px !important;
-}

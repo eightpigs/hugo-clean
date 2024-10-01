@@ -1,17 +1,9 @@
-<ul style="margin-left: 15px;">
-  <li>
-    {{ .Key }}
-    {{ range where .Pages "Type" "posts" }}
-    <ul class="item" style="margin-left: 30px;">
-      <li>
-        {{ if .IsHome }}
-        <span class="date">{{.Date.Format "01-02"}}</span>
-        {{ else }}
-        <span class="date">{{.Date.Format "01-02"}}</span>
-        {{ end }}
-        <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
-      </li>
-    </ul>
-    {{ end }}
+<h2>{{ .Key }}</h2>
+{{ range where .Pages "Type" "posts" }}
+<ul class="item" style="margin-left: 30px;">
+  <li style="list-style: disc;">
+    <span class="date" style="margin-right: 2rem; min-width: 40px;">{{.Date.Format "01-02"}}</span>
+    <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
   </li>
 </ul>
+{{ end }}

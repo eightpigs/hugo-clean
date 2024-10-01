@@ -1,15 +1,10 @@
 .site-info .name {
-  margin-top: -10px;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
   font-style: normal;
   font-size: 2em;
   line-height: 2rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: auto;
-}
-
-.navbar {
-  margin: 0 auto 2rem;
 }
 
 .navbar ul {
@@ -20,18 +15,27 @@
 .navbar ul li {
   display: inline-block;
   border-right: 1px solid #eaecef;
-  vertical-align: middle;
   text-align: center;
-  margin-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar ul li:first-child {
+  padding-left: 0px;
 }
 
 .navbar ul li:last-child {
   border-right: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
 .navbar ul li a {
-  margin-right: 15px;
   color: unset !important;
+}
+
+.site-info .description {
+  margin-top: 2rem;
 }
 
 .site-info .socials {
