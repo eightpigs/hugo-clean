@@ -1,0 +1,21 @@
+{{/* Partial for generating page titles */}}
+{{- $title := .Site.Title -}}
+{{- if not .IsHome -}}
+  {{- if eq .Type "categories" -}}
+    {{- $alias := .Site.Params.category.alias -}}
+    {{- $categoryName := index $alias (.Title | lower) -}}
+    {{- $title = printf "%s - %s" ($categoryName | default .Title) .Site.Title -}}
+  {{- else if eq .Type "tags" -}}
+    {{- $title = printf "#%s - %s" .Title .Site.Title -}}
+  {{- else if strings.Contains .Title "404" -}}
+    {{- $title = printf "404 - %s" .Site.Title -}}
+  {{- else -}}
+    {{- $menus := where .Site.Menus.main "Identifier" (.Title | lower) -}}
+    {{- if gt (len $menus) 0 -}}
+      {{- $title = printf "%s - %s" (index $menus 0).Name .Site.Title -}}
+    {{- else -}}
+      {{- $title = printf "%s - %s" .Title .Site.Title -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $title -}}

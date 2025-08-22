@@ -1,13 +1,21 @@
-{{ if and (.Site.Params.render.flowchart) (.Params.flowchart) }}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.15.0/flowchart.min.js"></script>
+{{/* Condition check already done in scripts.html */}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flowchart.js@1.17.1/release/flowchart.min.js"></script>
 <script>
-  var flows = document.getElementsByClassName("language-flow");
-  for(var i = 0; i < flows.length; i++) {
-    var code = flows[0].innerText.replace("```flow","").replace("```","");
-    flows[0].innerText = ""
-    var diagram = flowchart.parse(code);
-    diagram.drawSVG(flows[0]);
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const flows = document.getElementsByClassName("language-flow");
+    for(let i = 0; i < flows.length; i++) {
+      const flowElement = flows[i];
+      const code = flowElement.innerText.replace(/```flow|```/g, '').trim();
+      
+      try {
+        flowElement.innerHTML = '';
+        const diagram = flowchart.parse(code);
+        diagram.drawSVG(flowElement);
+      } catch (error) {
+        console.error('Flowchart rendering error:', error);
+        flowElement.innerHTML = '<div style="color: red;">Flowchart rendering error</div>';
+      }
+    }
+  });
 </script>
-{{ end }}

@@ -1,9 +1,9 @@
-<div class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main navigation">
   <ul>
   {{ range .Site.Menus.main }}
     <li>
-      <a href="{{ .URL }}">{{ .Name }}</a>
+      <a href="{{ .URL }}"{{ if eq .URL $.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a>
     </li>
   {{ end }}
   </ul>
-</div>
+</nav>

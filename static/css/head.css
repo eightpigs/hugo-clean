@@ -1,8 +1,8 @@
 .site-info .name {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
   font-style: normal;
-  font-size: 2em;
-  line-height: 2rem;
+  font-size: var(--font-size-xxl);
+  line-height: var(--space-lg);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: auto;
 }
@@ -14,20 +14,20 @@
 
 .navbar ul li {
   display: inline-block;
-  border-right: 1px solid #eaecef;
+  border-right: 1px solid var(--color-border);
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .navbar ul li:first-child {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .navbar ul li:last-child {
-  border-right: 0px;
-  margin-right: 0px;
-  padding-right: 0px;
+  border-right: 0;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .navbar ul li a {
@@ -35,11 +35,12 @@
 }
 
 .site-info .description {
-  margin-top: 2rem;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .site-info .socials {
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
 }
 
 .site-info .socials a {

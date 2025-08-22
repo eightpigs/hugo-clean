@@ -6,17 +6,17 @@
   float: left;
   display: block;
   min-width: 80px;
-  margin-right: 2rem;
-  color: #6c757d;
+  margin-right: var(--space-lg);
+  color: var(--color-text-light);
 }
 
-@media screen and (min-width: 1200px){} /* Desktop */
-@media screen and (min-width: 1025px) and (max-width: 1199px){} /* small laptop */
-@media screen and (min-width: 768px) and (max-width: 1024px){} /* tablet */
-@media screen and (min-width: 575px) and (max-width: 767.98px){} /* tablet and large mobiles */
-@media screen and (max-width: 480px){
+/* Mobile optimization */
+@media screen and (max-width: 480px) {
   .posts .item .date {
-    width: 0px;
     display: none;
   }
-} /* Mobile*/
+  
+  .posts .item {
+    flex-direction: column;
+  }
+}

@@ -1,27 +1,27 @@
 <div class="site-info">
   <div class="name">
   {{- .Site.Title -}}
-  {{ if not .IsHome }}
-    <span style="font-weight: normal; color: #808080;">
-    / 
-    {{ $title := .Title }} 
-    {{ if eq .Type "categories" }}
-      {{ $alias := .Site.Params.category.alias }}
+  {{- if not .IsHome -}}
+    <span style="font-weight: normal; color: var(--color-text-light);">
+    /&nbsp;
+    {{- $title := .Title -}} 
+    {{- if eq .Type "categories" -}}
+      {{- $alias := .Site.Params.category.alias -}}
       {{- index $alias ($title | lower) -}}
-    {{ else if eq .Type "tags" }}
+    {{- else if eq .Type "tags" -}}
       #{{- .Title -}}
-    {{ else if strings.Contains $title "404" }}
+    {{- else if strings.Contains $title "404" -}}
       404
-    {{ else }}
-      {{ $menus := where .Site.Menus.main "Identifier" (.Title | lower) }}
-      {{ if gt (len $menus) 0 }}
-        {{ (index $menus 0).Name }}
-      {{ else }}
-      {{- .Title | lower -}}
-      {{ end }}
-    {{ end }}
+    {{- else -}}
+      {{- $menus := where .Site.Menus.main "Identifier" (.Title | lower) -}}
+      {{- if gt (len $menus) 0 -}}
+        {{- (index $menus 0).Name -}}
+      {{- else -}}
+        {{- .Title -}}
+      {{- end -}}
+    {{- end -}}
     </span>
-  {{ end }}
+  {{- end -}}
   </div>
 
   {{ partial "navbar.html" . }}

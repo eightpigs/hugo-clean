@@ -1,26 +1,25 @@
-<div class="content">
-  <h1>{{ .Title }} </h1>
+<article class="content">
+  <header class="content-header">
+    <h1>{{ .Title }}</h1>
 
-  <div class="content-header">
     <div class="info">
-      <span class="date">
+      <time class="date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         {{ .Date.Format "2006-01-02" }}
-      </span>
+      </time>
 
       {{ if .Params.categories }}
         {{ $alias := .Site.Params.category.alias }}
         <span class="categories" style="font-weight:bold;">
         {{ range .Params.categories }}
-        <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category">{{ index $alias (. | lower) }}</a>
+        <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category" rel="category">{{ index $alias (. | lower) }}</a>
         {{ end }}
         </span>
       {{ end }}
 
       <span class="tags">
         {{ if .Params.tags}}
-
         {{ range .Params.tags }}
-        <a data-real="{{.}}" href="/tags/{{ urlize . }}/" class="tag"><span style="font-weight: bold; margin-right: 2px; font-size: 16px;">#</span>{{.}}</a>
+        <a data-real="{{.}}" href="/tags/{{ urlize . }}/" class="tag" rel="tag"><span style="font-weight: bold; margin-right: 2px; font-size: 16px;" aria-hidden="true">#</span>{{.}}</a>
         {{end}}
         {{ end }}
       </span>
@@ -28,7 +27,7 @@
 
     {{ if .Params.changelogs }}
     <div class="changelogs">
-      <div class="title">更新日志</div>
+      <div class="title">Changelog</div>
       {{ range .Params.changelogs }}
         {{ if eq (len .notes) 1 }}
         <div class="changelog">
@@ -52,26 +51,29 @@
     {{ end }}
   </div>
 
+  </header>
+
   <div class="content-body"> {{ .Content }} </div>
 
-  <div class="content-footer">
+  <footer class="content-footer">
 
   {{ if and (.Site.Params.cc) (.Params.cc) }}
   <div class="cc">
-  文章作者：{{ .Params.author }}
+  Author: {{ .Params.author }}
   <br />
-  创作时间：{{ .Date.Format "2006-01-02" }}
+  Published: {{ .Date.Format "2006-01-02" }}
   <br />
-  更新时间：
+  Updated: 
   {{- if .Params.Updated }}
     {{- substr .Params.Updated 0 10 }}
   {{ else }}
     {{- .Date.Format "2006-01-02" }}
   {{ end }}
   <br />
-  许可协议：<a href="{{ .Site.Params.cc.url }}" target="_blank" style="text-transform: uppercase;">CC {{ .Site.Params.cc.name }}</a>
+  License: <a href="{{ .Site.Params.cc.url }}" target="_blank" style="text-transform: uppercase;">CC {{ .Site.Params.cc.name }}</a>
   </div>
   {{ end }}
-  </div>
+  </footer>
 
 {{- partial "footer.html" . }}
+</article>

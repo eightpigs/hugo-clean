@@ -7,32 +7,32 @@
   <meta name="author" content="{{ .Site.Title }}, {{ .Site.Params.socials.email }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
-  {{- $currentTimestamp := mul 1000 (time "2016-05-28T10:30:00.00+10:00").Unix -}}
+  {{- $currentTimestamp := now.Unix -}}
   {{- if .Site.Params.favicon -}}
-  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-png" />
+  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon" />
   {{- end -}}
 
-  <link rel="stylesheet" href="{{ "css/head.css" | relURL }}?t={{ $currentTimestamp }}">
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?t={{ $currentTimestamp }}">
-  <link rel="stylesheet" href="{{ "css/list.css" | relURL }}?t={{ $currentTimestamp }}">
+  <link rel="stylesheet" href="{{ "css/head.css" | relURL }}?v={{ $currentTimestamp }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ $currentTimestamp }}">
+  <link rel="stylesheet" href="{{ "css/list.css" | relURL }}?v={{ $currentTimestamp }}">
 
+  {{- $pageTitle := partial "page-title.html" . -}}
+  <title>{{ $pageTitle }}</title>
+  <meta property="og:title" content="{{ $pageTitle }}" />
+  
   {{- if .IsHome -}}
-  <title>{{ .Site.Title }}</title>
-  <meta property="og:title" content="{{ .Site.Title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ .Site.Params.description }}" />
   <meta name="description" content="{{ .Site.Params.description }}" />
   {{- else -}}
-  <title>{{ .Title }} - {{ .Site.Title }}</title>
-  <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
   <meta property="og:type" content="article" />
   <meta property="og:description" content="{{ default .Summary .Description }}" />
   <meta name="description" content="{{ default .Summary .Description }}" />
   <meta name="keywords" content="{{ .Site.Params.keywords }}" />
 
-  {{ if eq .Page.Type "posts" }}
-  <link rel="stylesheet" href="{{ "css/post.css" | relURL }}?t={{ $currentTimestamp }}">
-  {{ end }}
+  {{- if eq .Page.Type "posts" -}}
+  <link rel="stylesheet" href="{{ "css/post.css" | relURL }}?v={{ $currentTimestamp }}">
+  {{- end -}}
 
-  {{- end }}
+  {{- end -}}
 </head>

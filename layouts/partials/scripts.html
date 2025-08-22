@@ -1,5 +1,13 @@
-{{ if not .IsHome -}}
-  {{- partial "script-mathjax.html" . -}}
-  {{- partial "script-mermaid.html" . -}}
-  {{- partial "script-flowchart.html" . -}}
-{{- end }}
+{{- if not .IsHome -}}
+  {{- if and (.Site.Params.render.mathjax) (.Params.formula) -}}
+    {{- partial "script-mathjax.html" . -}}
+  {{- end -}}
+  
+  {{- if and (.Site.Params.render.mermaid) (.Params.graphic) -}}
+    {{- partial "script-mermaid.html" . -}}
+  {{- end -}}
+  
+  {{- if and (.Site.Params.render.flowchart) (.Params.flowchart) -}}
+    {{- partial "script-flowchart.html" . -}}
+  {{- end -}}
+{{- end -}}
