@@ -1,27 +1,27 @@
 <div class="site-info">
   <div class="name">
-  {{- .Site.Title -}}
-  {{- if not .IsHome -}}
+    {{- .Site.Title -}}
+    {{- if and (not .IsHome) (not (eq .Page.Type "posts")) -}}
     <span style="font-weight: normal; color: var(--color-text-light);">
-    /&nbsp;
-    {{- $title := .Title -}} 
-    {{- if eq .Type "categories" -}}
+      /&nbsp;
+      {{- $title := .Title -}}
+      {{- if eq .Type "categories" -}}
       {{- $alias := .Site.Params.category.alias -}}
       {{- index $alias ($title | lower) -}}
-    {{- else if eq .Type "tags" -}}
+      {{- else if eq .Type "tags" -}}
       #{{- .Title -}}
-    {{- else if strings.Contains $title "404" -}}
+      {{- else if strings.Contains $title "404" -}}
       404
-    {{- else -}}
+      {{- else -}}
       {{- $menus := where .Site.Menus.main "Identifier" (.Title | lower) -}}
       {{- if gt (len $menus) 0 -}}
-        {{- (index $menus 0).Name -}}
+      {{- (index $menus 0).Name -}}
       {{- else -}}
-        {{- .Title -}}
+      {{- .Title -}}
       {{- end -}}
-    {{- end -}}
+      {{- end -}}
     </span>
-  {{- end -}}
+    {{- end -}}
   </div>
 
   {{ partial "navbar.html" . }}
@@ -30,19 +30,19 @@
   {{ if .Site.Params.description }}
   <div class="description">{{ .Site.Params.description }}</div>
   {{ end }}
-    {{ if .Site.Params.socials.enable }}
-    <div class="socials">
-      Find me on 
-      {{ if gt (countrunes .Site.Params.socials.github) 0 }}
-        <a target="_blank" href="https://github.com/{{ .Site.Params.socials.github }}" >Github</a>
-      {{ end }}
-      {{ if gt (countrunes .Site.Params.socials.twitter) 0 }}
-        <a target="_blank" href="https://twitter.com/{{ .Site.Params.socials.twitter }}" >Twitter</a>
-      {{ end }}
-      {{ if gt (countrunes .Site.Params.socials.email) 0 }}
-        <a target="_blank" href="mailto:{{ .Site.Params.socials.email }}" >E-mail</a>
-      {{ end }}
-    </div>
+  {{ if .Site.Params.socials.enable }}
+  <div class="socials">
+    Find me on
+    {{ if gt (countrunes .Site.Params.socials.github) 0 }}
+    <a target="_blank" href="https://github.com/{{ .Site.Params.socials.github }}">Github</a>
     {{ end }}
+    {{ if gt (countrunes .Site.Params.socials.twitter) 0 }}
+    <a target="_blank" href="https://twitter.com/{{ .Site.Params.socials.twitter }}">Twitter</a>
+    {{ end }}
+    {{ if gt (countrunes .Site.Params.socials.email) 0 }}
+    <a target="_blank" href="mailto:{{ .Site.Params.socials.email }}">E-mail</a>
+    {{ end }}
+  </div>
+  {{ end }}
   {{ end }}
 </div>

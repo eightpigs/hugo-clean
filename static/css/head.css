@@ -1,6 +1,7 @@
 .site-info .name {
   margin-bottom: var(--space-sm);
   font-style: normal;
+  font-weight: 700;
   font-size: var(--font-size-xxl);
   line-height: var(--space-lg);
   -moz-osx-font-smoothing: grayscale;

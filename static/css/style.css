@@ -23,8 +23,8 @@
   --space-xl: 4rem;
 
   /* Font size variables */
-  --font-size-base: 1.08em;
-  --font-size-small: 0.9em;
+  --font-size-base: 1em;
+  --font-size-small: 0.8em;
   --font-size-large: 1.25em;
   --font-size-xl: 1.5em;
   --font-size-xxl: 2em;
@@ -83,10 +83,6 @@ body {
   background-color: var(--color-bg);
 }
 
-body:lang(en-US) {
-  font-family: var(--font-sans);
-}
-
 a {
   text-decoration: none;
   background-color: transparent;
@@ -116,6 +112,7 @@ a:hover {
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: stretch;
+  margin-top: var(--space-lg);
 }
 
 .footer {
@@ -236,6 +233,7 @@ pre {
   margin: 16px 0;
   padding: 16px;
   border-radius: var(--border-radius-large);
+  overflow-x: scroll;
 }
 
 pre code {
@@ -339,11 +337,6 @@ img {
   body {
     margin-top: var(--space-lg);
     text-align: left;
-  }
-
-  .site-info .name {
-    font-size: 1.8rem;
-    line-height: 1.4;
   }
 
   h1 {
