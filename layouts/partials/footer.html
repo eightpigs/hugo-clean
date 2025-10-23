@@ -2,15 +2,15 @@
 <div class="footer">
   {{ if .Site.Params.copyright.enable }}
   <div class="copyright">
-    {{ $start := .Site.Params.copyright.start }} 
-    {{ $end := cond (eq .Site.Params.copyright.end "auto") (now.Format "2006") .Site.Params.copyright.end }} 
+    {{ $start := .Site.Params.copyright.start }}
+    {{ $end := cond (eq .Site.Params.copyright.end "auto") (now.Format "2006") .Site.Params.copyright.end }}
     &copy; {{ $start }} - {{ $end }}
 
     {{ if eq .Site.Params.copyright.name "auto" }}
-      {{ .Site.Title }} 
+    {{ .Site.Title }}
     {{- else -}}
-      {{ .Site.Params.copyright.name }} 
-    {{ end }} 
+    {{ .Site.Params.copyright.name }}
+    {{ end }}
   </div>
   {{ end }}
 

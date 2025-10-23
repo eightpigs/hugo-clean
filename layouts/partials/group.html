@@ -1,7 +1,7 @@
 <h2>{{ .Key }}</h2>
 {{ range where .Pages "Type" "posts" }}
-<ul class="item" style="margin-left: 30px;">
-  <li style="list-style: disc;">
+<ul class="item" style="margin-left: 0px !important;">
+  <li style="list-style: none;">
     <span class="date" style="margin-right: 2rem; min-width: 40px;">{{.Date.Format "01-02"}}</span>
     <span class="title"><a href="{{.Permalink}}">{{.Title}}</a></span>
   </li>

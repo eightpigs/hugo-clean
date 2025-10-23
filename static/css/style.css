@@ -3,6 +3,7 @@
   --color-text: #212529;
   --color-text-light: #6c757d;
   --color-bg: #ffffff;
+  --color-gray: #f7f7f7;
   --color-border: #eaecef;
   --color-selection: rgba(178, 224, 251, 0.5);
   --color-accent: #d73a49;
@@ -23,8 +24,8 @@
   --space-xl: 4rem;
 
   /* Font size variables */
-  --font-size-base: 1em;
-  --font-size-small: 0.8em;
+  --font-size-base: 1.10em;
+  --font-size-small: 0.90em;
   --font-size-large: 1.25em;
   --font-size-xl: 1.5em;
   --font-size-xxl: 2em;
@@ -35,6 +36,8 @@
   --line-height: 1.8;
   --border-radius: 4px;
   --border-radius-large: 8px;
+
+  text-autospace: normal;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,7 +72,8 @@ body {
   font-family: var(--font-serif);
   font-size: var(--font-size-base);
   font-weight: normal;
-  -moz-osx-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: auto;
   width: var(--content-width);
   max-width: var(--max-width);
@@ -78,9 +82,9 @@ body {
   padding-bottom: var(--space-xl);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  text-align: justify;
   font-feature-settings: "halt";
   background-color: var(--color-bg);
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -90,8 +94,8 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 
 .section-title {
@@ -112,7 +116,6 @@ a:hover {
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: stretch;
-  margin-top: var(--space-lg);
 }
 
 .footer {
@@ -249,13 +252,9 @@ aside {
 }
 
 blockquote {
-  margin: var(--space-lg) var(--space-sm) !important;
-  border-left: 4px solid var(--color-accent);
-  padding-left: var(--space-sm);
-}
-
-blockquote p {
-  font-weight: bold;
+  background-color: var(--color-gray);
+  border-left: 2px solid var(--color-accent);
+  padding: var(--space-sm);
 }
 
 blockquote::before {
@@ -271,6 +270,7 @@ hr {
   text-align: left;
   margin: 8px 0;
   color: var(--color-border);
+  border-bottom: 0px;
 }
 
 table {
@@ -295,8 +295,8 @@ dl,
 p,
 pre,
 table {
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 img {
@@ -374,4 +374,25 @@ img {
 
 .content .chroma {
   overflow: scroll;
+}
+
+.content-body h2:before,
+.content-body h3:before,
+.content-body h4:before,
+.content-body h5:before,
+.content-body h6:before {
+  margin-right: 0.25em;
+  color: var(--color-accent);
+}
+
+.content-body h2:before {
+  content: "##";
+}
+
+.content-body h3:before {
+  content: "###";
+}
+
+.content-body h4:before {
+  content: "####";
 }

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
-    {{- partial "header.html" . -}}
-    <body>
-        <header role="banner">
-            {{- partial "head.html" . -}}
-        </header>
-        
-        <main id="main-content" role="main">
-            {{- block "main" . }}{{- end }}
-        </main>
-    </body>
+{{- partial "header.html" . -}}
+
+<body>
+  <header role="banner">
+    {{- partial "head.html" . -}}
+  </header>
+
+  <main id="main-content" role="main">
+    {{- block "main" . }}{{- end }}
+  </main>
+</body>
+
 </html>

@@ -1,18 +1,18 @@
 {{ define "main" }}
-<div class="posts" style="margin-top: 2rem;">
-  {{ if eq .Type "archives" }} 
+<div class="posts">
+  {{ if eq .Type "archives" }}
 
-    {{ range .Site.RegularPages.GroupByDate "2006" }}
-      {{ if gt (len (where .Pages "Type" "posts")) 0 }}
-        {{ partial "group.html" . }}
-      {{ end }}
-    {{ end }}
+  {{ range .Site.RegularPages.GroupByDate "2006" }}
+  {{ if gt (len (where .Pages "Type" "posts")) 0 }}
+  {{ partial "group.html" . }}
+  {{ end }}
+  {{ end }}
 
   {{- else -}}
 
-    {{ range .Pages.GroupByDate "2006" }}
-      {{ partial "group.html" . }}
-    {{ end }}
+  {{ range .Pages.GroupByDate "2006" }}
+  {{ partial "group.html" . }}
+  {{ end }}
 
   {{ end }}
 </div>

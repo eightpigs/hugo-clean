@@ -1,29 +1,29 @@
 {{ define "main" }}
 
-  <p class="section-title">Recent Articles</p>
-  <div class="posts">
+<p class="section-title">Recent Articles</p>
+<div class="posts">
   {{ range first 5 (where (where .Site.Pages "Kind" "page") ".Params.separate" "!=" true) }}
-    <div class="item">
-      <!-- <div class="date"> {{.Date.Format "2006-01-02"}} </div> -->
-      <div class="title">
-        <a href="{{.Permalink}}">{{.Title}}</a>
-      </div>
+  <div class="item">
+    <!-- <div class="date"> {{.Date.Format "2006-01-02"}} </div> -->
+    <div class="title">
+      <a href="{{.Permalink}}">{{.Title}}</a>
     </div>
-  {{ end }}
   </div>
-
-  {{ if and (.Site.Params.category.inIndex) (.Site.Taxonomies.categories) }} 
-  <p class="section-title">Categories</p>
-  <ul style="margin: 0px;">
-    {{ $alias := .Site.Params.category.alias }}
-    {{ range $key, $value := .Site.Taxonomies.categories }}
-      <li style="list-style: none;">
-        <a href="/categories/{{ $key | urlize  }}">
-          {{- index $alias ($key | lower) -}}
-        </a>({{- len $value -}})
-      </li>
-    {{ end }}
-  </ul>
   {{ end }}
+</div>
+
+{{ if and (.Site.Params.category.inIndex) (.Site.Taxonomies.categories) }}
+<p class="section-title">Categories</p>
+<ul style="margin: 0px; margin: 0px; display: grid ; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+  {{ $alias := .Site.Params.category.alias }}
+  {{ range $key, $value := .Site.Taxonomies.categories }}
+  <li style="list-style: none;">
+    <a href="/categories/{{ $key | urlize  }}">
+      {{- index $alias ($key | lower) -}}
+    </a>({{- len $value -}})
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
 
 {{ end }}

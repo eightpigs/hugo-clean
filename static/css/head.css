@@ -1,3 +1,7 @@
+header[role='banner'] {
+  margin-bottom: var(--space-md);
+}
+
 .site-info .name {
   margin-bottom: var(--space-sm);
   font-style: normal;
@@ -37,7 +41,6 @@
 
 .site-info .description {
   margin-top: var(--space-md);
-  margin-bottom: var(--space-lg);
 }
 
 .site-info .socials {
