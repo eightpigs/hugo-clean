@@ -32,6 +32,8 @@ params:
     name: auto
   socials:
     enable: true
+    prefix: Find me on 
+    suffix: "."
     twitter: eightpigs
     email: eightpigs@outlook.com
     github: eightpigs
@@ -39,8 +41,12 @@ params:
     mathjax: true
     mermaid: true
     flowchart: true
+  recentArticles:
+    count: 5
+    title: Recent Articles
   category:
     inIndex: true
+    title: Categories
     alias:
       vim: Vim
       linux: Linux

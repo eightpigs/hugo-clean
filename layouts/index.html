@@ -1,8 +1,9 @@
 {{ define "main" }}
 
-<p class="section-title">Recent Articles</p>
+<p class="section-title">{{.Site.Params.recentArticles.title }}</p>
 <div class="posts">
-  {{ range first 5 (where (where .Site.Pages "Kind" "page") ".Params.separate" "!=" true) }}
+  {{ $count := .Site.Params.recentArticles.count }}
+  {{ range first $count (where (where .Site.Pages "Kind" "page") ".Params.separate" "!=" true) }}
   <div class="item">
     <!-- <div class="date"> {{.Date.Format "2006-01-02"}} </div> -->
     <div class="title">
@@ -13,7 +14,7 @@
 </div>
 
 {{ if and (.Site.Params.category.inIndex) (.Site.Taxonomies.categories) }}
-<p class="section-title">Categories</p>
+<p class="section-title"> {{.Site.Params.category.title}}</p>
 <ul style="margin: 0px; margin: 0px; display: grid ; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
   {{ $alias := .Site.Params.category.alias }}
   {{ range $key, $value := .Site.Taxonomies.categories }}

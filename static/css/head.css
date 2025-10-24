@@ -41,6 +41,7 @@ header[role='banner'] {
 
 .site-info .description {
   margin-top: var(--space-md);
+  font-weight: bold;
 }
 
 .site-info .socials {

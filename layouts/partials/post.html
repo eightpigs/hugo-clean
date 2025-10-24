@@ -3,23 +3,25 @@
     <h1>{{ .Title }}</h1>
 
     <div class="info">
-      <time class="date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      <time class="date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
         {{ .Date.Format "2006-01-02" }}
       </time>
 
       {{ if .Params.categories }}
-        {{ $alias := .Site.Params.category.alias }}
-        <span class="categories" style="font-weight:bold;">
+      {{ $alias := .Site.Params.category.alias }}
+      <span class="categories" style="font-weight:bold;">
         {{ range .Params.categories }}
-        <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category" rel="category">{{ index $alias (. | lower) }}</a>
+        <a data-real="{{.}}" href="/categories/{{ urlize . }}/" class="category" rel="category">{{ index $alias (. |
+          lower) }}</a>
         {{ end }}
-        </span>
+      </span>
       {{ end }}
 
       <span class="tags">
         {{ if .Params.tags}}
         {{ range .Params.tags }}
-        <a data-real="{{.}}" href="/tags/{{ urlize . }}/" class="tag" rel="tag"><span style="font-weight: bold; margin-right: 2px; font-size: 16px;" aria-hidden="true">#</span>{{.}}</a>
+        <a data-real="{{.}}" href="/tags/{{ urlize . }}/" class="tag" rel="tag"><span
+            style="font-weight: bold; margin-right: 2px; font-size: 16px;" aria-hidden="true">#</span>{{.}}</a>
         {{end}}
         {{ end }}
       </span>
@@ -27,29 +29,29 @@
 
     {{ if .Params.changelogs }}
     <div class="changelogs">
-      <div class="title">Changelog</div>
+      <div class="title">Changelogs</div>
       {{ range .Params.changelogs }}
-        {{ if eq (len .notes) 1 }}
-        <div class="changelog">
-          <span class="time">{{ .time }}</span>
-          <span class="note">{{ index .notes 0 }}</span>
-        </div>
-        {{ else }}
-        <div class="changelog">
-          <span class="time">{{ .time }}</span>
-          <ul>
+      {{ if eq (len .notes) 1 }}
+      <div class="changelog">
+        <span class="time">{{ .time }}</span>
+        <span class="note">{{ index .notes 0 }}</span>
+      </div>
+      {{ else }}
+      <div class="changelog">
+        <span class="time">{{ .time }}</span>
+        <ul>
           {{ range .notes }}
-            <li>
-                <span class="note"> {{ . }} </span>
-            </li>
+          <li>
+            <span class="note"> {{ . }} </span>
+          </li>
           {{ end }}
-          </ul>
-        </div>
-        {{ end }}
+        </ul>
+      </div>
+      {{ end }}
       {{ end }}
     </div>
     {{ end }}
-  </div>
+    </div>
 
   </header>
 
@@ -57,23 +59,26 @@
 
   <footer class="content-footer">
 
-  {{ if and (.Site.Params.cc) (.Params.cc) }}
-  <div class="cc">
-  Author: {{ .Params.author }}
-  <br />
-  Published: {{ .Date.Format "2006-01-02" }}
-  <br />
-  Updated: 
-  {{- if .Params.Updated }}
-    {{- substr .Params.Updated 0 10 }}
-  {{ else }}
-    {{- .Date.Format "2006-01-02" }}
-  {{ end }}
-  <br />
-  License: <a href="{{ .Site.Params.cc.url }}" target="_blank" style="text-transform: uppercase;">CC {{ .Site.Params.cc.name }}</a>
-  </div>
-  {{ end }}
+    {{ if and (.Site.Params.cc) (.Params.cc) }}
+    <div class="cc">
+      Author: {{ .Params.author }}
+      <br />
+      Published: {{ .Date.Format "2006-01-02" }}
+      <br />
+      Updated:
+      {{- if .Params.Updated }}
+      {{- substr .Params.Updated 0 10 }}
+      {{ else }}
+      {{- .Date.Format "2006-01-02" }}
+      {{ end }}
+      <br />
+      License:
+      <a href="{{ .Site.Params.cc.url }}" target="_blank" style="text-transform: uppercase;">
+        CC {{ .Site.Params.cc.name }}
+      </a>
+    </div>
+    {{ end }}
   </footer>
 
-{{- partial "footer.html" . }}
+  {{- partial "footer.html" . }}
 </article>

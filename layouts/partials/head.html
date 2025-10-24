@@ -2,7 +2,7 @@
   <div class="name">
     {{- .Site.Title -}}
     {{- if and (not .IsHome) (not (eq .Page.Type "posts")) -}}
-    <span style="font-weight: normal; color: var(--color-text-light);">
+    <span style="color: var(--color-text-light);">
       /&nbsp;
       {{- $title := .Title -}}
       {{- if eq .Type "categories" -}}
@@ -32,7 +32,7 @@
   {{ end }}
   {{ if .Site.Params.socials.enable }}
   <div class="socials">
-    Find me on
+    {{ .Site.Params.socials.prefix }}
     {{ if gt (countrunes .Site.Params.socials.github) 0 }}
     <a target="_blank" href="https://github.com/{{ .Site.Params.socials.github }}">Github</a>
     {{ end }}
@@ -42,6 +42,7 @@
     {{ if gt (countrunes .Site.Params.socials.email) 0 }}
     <a target="_blank" href="mailto:{{ .Site.Params.socials.email }}">E-mail</a>
     {{ end }}
+    {{ .Site.Params.socials.suffix }}
   </div>
   {{ end }}
   {{ end }}

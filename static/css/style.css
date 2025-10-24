@@ -24,7 +24,7 @@
   --space-xl: 4rem;
 
   /* Font size variables */
-  --font-size-base: 1.10em;
+  --font-size-base: 1.05em;
   --font-size-small: 0.90em;
   --font-size-large: 1.25em;
   --font-size-xl: 1.5em;
@@ -88,8 +88,10 @@ body {
 }
 
 a {
-  text-decoration: none;
   background-color: transparent;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
 }
 
 a:hover {
@@ -285,17 +287,21 @@ table thead {
 
 table th,
 table td {
-  padding: 0.5em 1em;
+  padding: 0px 8px;
   border: 1px solid #CCC;
 }
 
 blockquote,
 details,
 dl,
-p,
 pre,
 table {
   margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -355,20 +361,12 @@ img {
 
 @media screen and (max-width: 480px) {
   :root {
-    --font-size-base: 0.95rem;
+    --font-size-base: 1rem;
     --content-width: 95%;
   }
 
-  .navbar ul li {
-    display: block;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    padding: 8px 0;
-    text-align: left;
-  }
-
-  .navbar ul li:last-child {
-    border-bottom: none;
+  body {
+    margin: 24px auto;
   }
 }
 
